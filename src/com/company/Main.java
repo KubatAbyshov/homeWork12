@@ -7,16 +7,23 @@ public class Main {
         BankAccount bankAccount = new BankAccount();
         bankAccount.deposite(10000);
 
-        try {
-            bankAccount.withDraw(6000);
-        }catch (LimitException le){
-            for(int i = 0; i < le.getRemainingAmount(); i++);
-            System.out.println("У вас не достаточно денег на счете " + bankAccount.getAmount());
+        while (true) {
+            try {
+                bankAccount.withDraw(6000);
+            }catch (LimitException e){
+                System.out.println("Вы сняли - " + "6000");
+                return;
+                }
+           finally {
+                    System.out.println();
+                }
             }
-
-
-
         }
 
+
+
     }
+
+
+
 
