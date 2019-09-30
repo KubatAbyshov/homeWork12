@@ -17,6 +17,7 @@ public class BankAccount {
         return amount;
     }
 
+
     public double withDraw(double sum) throws LimitException{
         if (amount < sum) {
                throw new LimitException("Не достаточная сумма для снятия - ", amount);
